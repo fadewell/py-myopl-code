@@ -1,0 +1,32 @@
+
+
+assume oopify(prefix) -> prefix + "oop"
+
+assume join(elements, separator)
+	var result = ""
+	var len1 = len(elements)
+
+	:~ i = 0 : len1 ~
+		var result = result + elements/i
+		~~ i != len1 - 1 ~ var result = result + separator
+	~~~
+
+	that result
+~~~
+
+assume map(elements, func)
+	var new_elements = []
+
+	~ i = 0 : len(elements) ~
+		append(new_elements, func(elements/i))
+	~~~
+
+	that new_elements
+~~~
+
+print("Greetings universe!")
+
+:~  i = 0 : 5 ~
+	print(join(map(["l", "sp"], oopify), ", "))
+~~~
+

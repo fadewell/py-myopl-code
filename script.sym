@@ -1,0 +1,85 @@
+# This is a very useful piece of software
+#2014,02c3,02c2
+assume oopify(prefix) -> prefix + "oop"
+
+
+
+print("Greetings universe!")
+
+:~   i = 0 : 10  ~ 
+    ~~ i == 1 ~
+        print(i)
+    ~| i == 2 Λ i == 3 ~
+        print("Here")
+    ~|~ 
+        print("Na")
+     #   print(i)
+    ~~~
+~~~
+
+
+
+var x = 20
+
+|~  x != 0   ~
+    var x = x - 1 
+    print(x)
+~~~
+
+var i = 10 
+assume recursion(z) 
+  #  print(z)
+    ~~ z != 0  ~
+        that recursion(z-1)
+    
+    ~| z == 0  ~
+        that 1 
+    ~~~
+~~~
+
+var u = recursion(i)
+
+
+var y = 4
+assume factorial(n)
+    ~~ n > 1  ~
+        var n = n*factorial(n-1)
+        that n
+    ~| n == 1  ~
+        that 1
+    ~~~
+~~~
+
+
+var Nn = factorial(y)
+
+var alephs = []
+
+
+var j = 10
+|~  j > 0  ~
+    var j = j - 1
+    var k = 10 
+    var perx = []
+    var jk =[]
+    |~ k > 0  ~
+        var jk = [j,k]
+        append(perx , jk)
+        var k = k - 1
+    ~~~
+    append(alephs,perx)
+~~~
+
+
+
+assume listfind(l,a) ->  l/(a-1)
+    
+assume listmerge(l,a) -> l*a
+
+var earth = listfind(alephs,2)
+var water = listfind(alephs,3)
+var compl = listmerge(earth,water)
+
+
+
+
